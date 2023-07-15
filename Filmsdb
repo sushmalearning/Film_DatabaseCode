@@ -1,0 +1,54 @@
+create table Artist (
+art_id int not null Primary Key,
+art_firstName text not null,
+art_lastName text not null,
+art_age int not null,
+art_gender text not null
+);
+
+insert into Artist values (001, "Neha", "Kakkar", 30, "Female");
+insert into Artist values (002, "Sonu", "Nigam", 35, "Male");
+insert into Artist values (003, "Shaan", "Khandwa", 33, "Male");
+insert into Artist values (004, "Arjith", "Singh", 36, "Male");
+insert into Artist values (005, "A.R", "Rehman", 38, "Male");
+
+Select * from Artist;
+
+
+
+create table Producer (
+prod_id int primary key,
+prod_firstName text not null,
+prod_lastName text not null,
+prod_age int not null,
+prod_gender text not null
+);
+
+
+insert into Producer values (001, "Yash", "Chopra", 67, "Male");
+insert into Producer values (002, "Aditya", "Chopra", 56, "Male");
+insert into Producer values (003, "Mukesh", "Bhatt", 73, "Male");
+insert into Producer values (004, "Malaika", "Arora", 45, "Female");
+insert into Producer values (005, "Ekta", "Kapoor", 45, "Female");
+
+Select * from Producer;
+
+
+Create table Films (
+film_id int primary key,
+film_title text not null,
+film_lang text not null,
+film_releaseDate date not null,
+producer_id int null,
+FOREIGN KEY (producer_id) REFERENCES Producer(prod_id)
+);
+
+
+insert into Films values (001, "KGF", "KAN", now(), 001);
+insert into Films values (002, "War2", "HIN", now(), 002);
+insert into Films values (003, "Pathan", "HIN", now(), 003);
+insert into Films values (004, "FastX", "ENG", now(), 004);
+insert into Films values (005, "SlowX", "ENG", now(), 004);
+
+select * from Films;
+
