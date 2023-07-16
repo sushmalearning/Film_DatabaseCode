@@ -1,3 +1,4 @@
+#This file contains films related all the db scrips
 create table Artist (
 art_id int not null Primary Key,
 art_firstName text not null,
