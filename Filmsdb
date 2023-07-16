@@ -52,3 +52,38 @@ insert into Films values (005, "SlowX", "ENG", now(), 004);
 
 select * from Films;
 
+create table Casting (
+cast_id int Primary key,
+film_id int not null,
+FOREIGN KEY (film_id) REFERENCES Films(film_id),
+producer_id int not null,
+FOREIGN KEY (producer_id) REFERENCES Producer(prod_id)
+);
+
+
+insert into Casting values (001, 002, 002);
+insert into Casting values (002, 003, 002);
+insert into Casting values (003, 004, 004);
+insert into Casting values (004, 003, 003);
+insert into Casting values (005, 001, 001);
+
+
+Select * from Casting;
+
+
+
+create table Review (
+review_id int primary key,
+film_id int not null,
+FOREIGN KEY (film_id) REFERENCES Films(film_id),
+Stars int not null
+);
+
+
+insert into Review values (001, 001, 4);
+insert into Review values (002, 002, 2);
+insert into Review values (003, 003, 5);
+insert into Review values (004, 002, 5);
+insert into Review values (005, 004, 3);
+
+Select * from Review;
